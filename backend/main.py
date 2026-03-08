@@ -7,9 +7,9 @@ from routers import users, token, workout, meals, coach, progress
 from database import init_db, SessionLocal, User
 from services.auth import get_password_hash
 import json
-
 app = FastAPI(title="ArogyaMitra API", version="1.0.0")
 
+# CORS - Allow frontend from any origin for deployment flexibility
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -18,7 +18,9 @@ app.add_middleware(
         "http://localhost:5174",
         "http://127.0.0.1:5174",
         "http://localhost:5175",
-        "http://127.0.0.1:5175"
+        "http://127.0.0.1:5175",
+        "https://*.netlify.app",  # Allow all Netlify subdomains
+        "*"  # Allow all origins for demo/submission (remove in production)
     ],
     allow_credentials=True,
     allow_methods=["*"],
