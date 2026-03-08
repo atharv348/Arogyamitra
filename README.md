@@ -52,6 +52,8 @@
 
 ### One-Command Setup
 
+> **📝 For Project Evaluators:** A working Groq API key is provided below for testing purposes.
+
 1. **Install Dependencies** (First time only):
 ```powershell
 # Install backend dependencies
@@ -63,6 +65,25 @@ cd ..
 cd frontend
 npm install
 cd ..
+```
+
+2. **Configure Environment:**
+   
+   Create `backend/.env` file with this content:
+   ```env
+   # Working API Key for project evaluation
+   GROQ_API_KEY=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
+   SECRET_KEY=arogyamitra-secret-key-change-in-production
+   DATABASE_URL=sqlite:///./arogyamitra.db
+   ALGORITHM=HS256
+   ACCESS_TOKEN_EXPIRE_MINUTES=30
+   ```
+
+   **Or simply run:**
+   ```powershell
+   cd backend
+   Copy-Item .env.example .env
+   ```
 ```
 
 2. **Configure Environment** (First time only):
