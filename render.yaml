@@ -9,9 +9,9 @@ services:
     startCommand: "cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
     envVars:
       - key: GROQ_API_KEY
-        value: your-groq-api-key-here
+        sync: false
       - key: SECRET_KEY
-        value: your-secret-key-change-in-production-09876543210987654321
+        sync: false
       - key: DATABASE_URL
         value: sqlite:///./arogyamitra.db
       - key: JWT_ALGORITHM

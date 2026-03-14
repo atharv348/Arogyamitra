@@ -22,7 +22,7 @@
    - **Publish directory:** `frontend/dist`
 7. **Add environment variable:**
    - Key: `VITE_API_URL`
-   - Value: `http://localhost:8000` (update after backend deployment)
+   - Value: `https://arogyamitra-backend.onrender.com`
 8. **Click "Deploy site"**
 
 ### Option B: Deploy via Netlify CLI
@@ -63,6 +63,8 @@ netlify deploy --prod
    ALGORITHM=HS256
    ACCESS_TOKEN_EXPIRE_MINUTES=30
    ```
+   - Keep `GROQ_API_KEY` only in backend provider secrets (Render/Railway dashboard).
+   - Never add Groq keys to frontend env variables (`VITE_*`) because those are public in browser builds.
 7. **Click "Create Web Service"**
 
 ### Option B: Alternative - Railway
